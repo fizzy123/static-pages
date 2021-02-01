@@ -12,9 +12,9 @@ sheet = json.loads(response.content)
 id = 0
 for row in sheet["feed"]["entry"]:
     args = {
-        "art": row["gsx$art"],
-        "artist": row["gsx$artist"],
-        "url": row["gsx$url"]
+        "art": row["gsx$art"]["$t"],
+        "artist": row["gsx$artist"]["$t"],
+        "url": row["gsx$url"]["$t"]
     }
     template = templateEnv.get_template("art.html")
     outputText = template.render(args)
