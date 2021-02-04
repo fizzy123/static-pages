@@ -2,7 +2,7 @@
   <head>
     <script>
       var gifs = ['https://video.twimg.com/tweet_video/CL52VJJUEAAWDaN.mp4', 'https://video.twimg.com/tweet_video/CL55melUYAANXoq.mp4', 'https://video.twimg.com/tweet_video/CL6ccnwUAAA0YAx.mp4', 'https://video.twimg.com/tweet_video/CL6pVRtVAAAdBC_.mp4', 'https://video.twimg.com/tweet_video/CL6wNmmUwAACp4g.mp4', 'https://video.twimg.com/tweet_video/CL8QQLmUAAE8ghM.mp4', 'https://video.twimg.com/tweet_video/CL_puh1UEAAwQoH.mp4', 'https://video.twimg.com/tweet_video/CMAq6xzWsAI5V7O.mp4', 'https://video.twimg.com/tweet_video/CMAvBO5WwAE52ZQ.mp4', 'https://video.twimg.com/tweet_video/CMBA3fnW8AAq7zw.mp4', 'https://video.twimg.com/tweet_video/CME7D04UMAAurJr.mp4', 'https://video.twimg.com/tweet_video/CMTAgWAWoAE4dts.mp4', 'https://video.twimg.com/tweet_video/CMp_AKMUcAAtvcP.mp4']
-      var gif = gif[Math.floor(gifs.length * Math.random())]
+      var gif = gifs[Math.floor(gifs.length * Math.random())]
       window.addEventListener('load', function () {
         document.getElementById("gif").src = gif
       })
