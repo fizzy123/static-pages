@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script>
+      var questions = {{questions}}
+      var question = questions[Math.floor(questions.length * Math.random())]
+      docuemnt.getElementById("question").textContent = question
+    </script>
+  </head>
+  <body>
+    <div>
+      As you gaze into the fire, you hear it ask:
+    </div>
+    "
+    <div id="question">
+    </div>
+    "
+  </body>
+</html>

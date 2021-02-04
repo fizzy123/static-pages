@@ -5,10 +5,11 @@ import jinja2
 templateLoader = jinja2.FileSystemLoader(searchpath="./templates")
 templateEnv = jinja2.Environment(loader=templateLoader)
 
-# 1. pull information from sheets
-response = requests.get("https://spreadsheets.google.com/feeds/list/1X9FSpCIEoputo7chaNdjzyEcHunghZgOK6h4NtjmUpg/od6/public/values?alt=json")
+# generate art pages
+sheetIndex = 1
+response = requests.get("https://spreadsheets.google.com/feeds/list/1X9FSpCIEoputo7chaNdjzyEcHunghZgOK6h4NtjmUpg/{}/public/values?alt=json".format(sheetIndex))
 sheet = json.loads(response.content)
-# 2. loop over rows
+
 id = 0
 for row in sheet["feed"]["entry"]:
     args = {
@@ -22,4 +23,17 @@ for row in sheet["feed"]["entry"]:
     text_file.write(outputText)
     text_file.close()
     id = id + 1
-# 4. save pages to appropriate location in output/
+
+# generate campfire page
+sheetIndex = 2
+response = requests.get("https://spreadsheets.google.com/feeds/list/1X9FSpCIEoputo7chaNdjzyEcHunghZgOK6h4NtjmUpg/{}/public/values?alt=json".format(sheetIndex))
+sheet = json.loads(response.content)
+questions = []
+for row in sheet["feed"]["entry"]:
+  questions.append(row["gsx$question"]["$t"])
+questionsString = json.dumps(questions)
+template = templateEnv.get_template("campfire.html")
+outputText = template.render({"questions": questions})
+text_file = open("output/campfire.html", "w")
+text_file.write(outputText)
+text_file.close()
