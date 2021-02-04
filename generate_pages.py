@@ -37,3 +37,17 @@ outputText = template.render({"questions": questions})
 text_file = open("output/campfire.html", "w")
 text_file.write(outputText)
 text_file.close()
+
+# generate telephone page
+sheetIndex = 3
+response = requests.get("https://spreadsheets.google.com/feeds/list/1X9FSpCIEoputo7chaNdjzyEcHunghZgOK6h4NtjmUpg/{}/public/values?alt=json".format(sheetIndex))
+sheet = json.loads(response.content)
+gifs = []
+for row in sheet["feed"]["entry"]:
+  gifs.append(row["gsx$gif"]["$t"])
+gifsString = json.dumps(gifs)
+template = templateEnv.get_template("telephone.html")
+outputText = template.render({"gifs": gifs})
+text_file = open("output/telephone.html", "w")
+text_file.write(outputText)
+text_file.close()
