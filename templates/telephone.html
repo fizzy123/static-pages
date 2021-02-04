@@ -2,7 +2,7 @@
   <head>
     <script>
       var gifs = {{gifs}}
-      var gif = gif[Math.floor(gifs.length * Math.random())]
+      var gif = gifs[Math.floor(gifs.length * Math.random())]
       window.addEventListener('load', function () {
         document.getElementById("gif").src = gif
       })
