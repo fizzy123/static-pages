@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script>
+      var gifs = {{gifs}}
+      var gif = gif[Math.floor(gifs.length * Math.random())]
+      window.addEventListener('load', function () {
+        document.getElementById("gif").src = gif
+      })
+    </script>
+  </head>
+  <body style="background-color: black;color: white;text-align: center;font-family: Arial;">
+    <video id="gif" autoplay style="max-height: 100vh;"></video>
+    <div>Source: https://twitter.com/nessitsyourdad</div>
+  </body>
+</html>
