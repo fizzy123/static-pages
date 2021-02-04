@@ -3,9 +3,9 @@
     <script>
       var questions = {{questions}}
       var question = questions[Math.floor(questions.length * Math.random())]
-      console.log("test")
-      console.log(question)
-      document.getElementById("question").textContent = question
+      window.addEventListener('load', function () {
+        document.getElementById("question").textContent = question
+      })
     </script>
   </head>
   <body>
