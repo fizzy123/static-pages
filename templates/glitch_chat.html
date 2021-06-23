@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="glitch.css">
   </head>
   <body style="color: white;background-color: black;text-align: center;font-family: arial;">
-    <div class="content" style="text-align: left;width: 500px;margin: auto;">
+    <div class="content" style="text-align: left;width: 600px;margin: auto;">
       <div class="chat-window">
         <div class="messages">
           {% for message in messages %}
@@ -11,8 +11,8 @@
             {% for line in message %}
               {% if line %}
               <div class="message">
-                <div class="name glitch" style="display:inline-block;color:{% if person %}blue{% else %}red{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
-                <div class="message-text glitch" style="display:inline-block;">{{line}}</div>
+                <div class="name glitch" style="vertical-align: top;display:inline-block;color:{% if person %}blue{% else %}red{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
+                <div class="message-text glitch" style="display:inline-block;width:400px">{{line}}</div>
               </div>
               {% endif %}
             {% endfor %}
