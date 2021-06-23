@@ -5,7 +5,12 @@
     <script src="glitch.jquery.js"></script>
     <script type="text/javascript">
       $(function(){
-        $('.body').glitch();
+        $('.body').glitch({
+          maxint: 2,
+          minint: 0,
+          maxglitch: 10,
+          direction: "random",
+        });
       });
     </script>
   </head>
