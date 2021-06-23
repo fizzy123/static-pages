@@ -1,16 +1,5 @@
 <html>
   <head>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="glitch.jquery.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        $('.message').glitch({
-          maxint: 2,
-          minint: 1,
-          maxGlitch: 10,
-        });
-      });
-    </script>
   </head>
   <body style="color: white;background-color: black;text-align: center;font-family: arial;">
     <div class="content" style="text-align: left;width: 600px;margin: auto;">
@@ -21,8 +10,8 @@
             {% for line in message %}
               {% if line %}
               <div class="message" style="padding: 5px 0px;">
-                <div class="name" style="vertical-align: top;display:inline-block;color:{% if person %}blue{% else %}red{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
-                <div class="message-text" style="display:inline-block;width:400px">{{line}}</div>
+                <div class="name glitch" style="vertical-align: top;display:inline-block;color:{% if person %}blue{% else %}red{% endif %}" data-text="{% if person %}{{person1}}{% else %}{{person2}}{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
+                <div class="message-text glitch" style="display:inline-block;width:400px" data-text="{{line}}">{{line}}</div>
               </div>
               {% endif %}
             {% endfor %}
