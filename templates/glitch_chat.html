@@ -1,0 +1,21 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="chat-window">
+      <div class="messages">
+        {% for message in messages %}
+          {% set person = loop.index0 % 2 %}
+          {% for line in message %}
+            <div class="message">
+              <div class="name">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
+              <div class="message-text">{{line}}</div>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+      <div class="chat-input">
+      </div>
+    </div>
+  </body>
+</html>
