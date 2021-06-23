@@ -9,10 +9,12 @@
           {% for message in messages %}
             {% set person = loop.index0 % 2 %}
             {% for line in message %}
+              {% if line %}
               <div class="message">
-                <div class="name glitch" style="color:{% if person %}blue{% else %}red{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
-                <div class="message-text glitch">{{line}}</div>
+                <div class="name glitch" style="display:inline-block;color:{% if person %}blue{% else %}red{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
+                <div class="message-text glitch" style="display:inline-block;">{{line}}</div>
               </div>
+              {% endif %}
             {% endfor %}
           {% endfor %}
         </div>
