@@ -65,7 +65,7 @@ for row in sheet["feed"]["entry"]:
         "to": row["gsx$to"]["$t"],
         "from": row["gsx$from"]["$t"],
         "subject": row["gsx$subject"]["$t"],
-        "body": row["gsx$body"]["$t"],
+        "body": row["gsx$body"]["$t"].replace("\n","<br>"),
     }
     template = templateEnv.get_template("glitch_email.html")
     outputText = template.render(args)
