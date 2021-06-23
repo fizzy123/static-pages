@@ -1,16 +1,17 @@
 <html>
   <head>
+    <link rel="stylesheet" href="glitch.css">
   </head>
   <body style="color: white;background-color: black;text-align: center;font-family: arial;">
-    <div class="content">
+    <div class="content" style="text-align: left;width: 500px;margin: auto;">
       <div class="chat-window">
         <div class="messages">
           {% for message in messages %}
             {% set person = loop.index0 % 2 %}
             {% for line in message %}
               <div class="message">
-                <div class="name">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
-                <div class="message-text">{{line}}</div>
+                <div class="name glitch" style="color:{% if person %}blue{% else %}red{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
+                <div class="message-text glitch">{{line}}</div>
               </div>
             {% endfor %}
           {% endfor %}
