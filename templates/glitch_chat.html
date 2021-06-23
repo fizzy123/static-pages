@@ -22,8 +22,8 @@
             {% for line in message %}
               {% if line %}
               <div class="message" style="padding: 5px 0px;">
-                <div class="name glitch" style="vertical-align: top;display:inline-block;color:{% if person %}blue{% else %}red{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
-                <div class="message-text glitch" style="display:inline-block;width:400px">{{line}}</div>
+                <div class="name" style="vertical-align: top;display:inline-block;color:{% if person %}blue{% else %}red{% endif %}">{% if person %}{{person1}}{% else %}{{person2}}{% endif %}</div>
+                <div class="message-text" style="display:inline-block;width:400px">{{line}}</div>
               </div>
               {% endif %}
             {% endfor %}
