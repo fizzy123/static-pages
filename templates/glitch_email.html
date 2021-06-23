@@ -1,12 +1,14 @@
 <html>
   <head>
+    <link rel="stylesheet" href="glitch.css">
   </head>
-  <body  style="color: white;background-color: black;text-align: center;font-family: arial;">
-    <div class="content">
-      <div class="from">FROM: {{from}}</div>
-      <div class="to">TO: {{to}}</div>
-      <div class="subject">SUBJECT: {{subject}}</div>
-      <div class="body">{{body}}</div>
+  <body  style="color: white;background-color: black;text-align: center;font-family: courier;">
+    <div class="content" style="text-align: left;width: 500px;margin: auto;">
+      <div class="from glitch" data-text="FROM: {{from}}">FROM: {{from}}</div>
+      <div class="to glitch" data-text="TO: {{to}}">TO: {{to}}</div>
+      <div class="subject" data-text="SUBJECT: {{subject}}">SUBJECT: {{subject}}</div>
+      <hr>
+      <div class="body" data-text="{{body}}">{{body}}</div>
     </div>
   </body>
 </html>
